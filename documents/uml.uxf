@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1060</x>
+      <y>480</y>
+      <w>330</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>Pong
+--
++ ball_position : int[2]
++ ball_velocity : int[2]
++ p1_position : int[2]
++ p2_position : int[2]
+--
++ reset() : void
++ player_hit_ball(int player) : bool
++ move_player(int player, int distance) : void
++ move_ball() : bool
++ get_winner() : int
++ help_get_data(int data, char &amp;c1, char &amp;c2) : void
++ help_set_data(char c1, char c2) : int
++ set_data(char *data) : void
++ void get_data(char *data);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>480</y>
+      <w>480</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>Display
+--
+_- img: char[1025]_
+_- characters: const unsigned char[36][5]_
+- pointer : int
+--
+- display_init() : void
++ writeI2C(unsigned char* data, int bytes, bool should_close = true) : void
++ draw_pixel(int x, int y, int color = 1) : void
++ draw_horizontal_line(int x, int y, int length, int color = 1) : void
++ draw_vertical_line(int x, int y, int length, int color = 1) : void
++ draw_rect(int x, int y, int width, int height, int color = 1) : void
++ fill_rect(int x, int y, int width, int height, int color = 1) : void
++ draw_circle(int x, int y, int radius, int color = 1) : void
++ fill_circle(int x, int y, int radius, int color = 1) : void
++ draw_char(int x, int y, char c) : int
++ draw_text(int x, int y, std::string s) : void
++ display(bool should_close = true) : void
++ clear_display() : void
++ move_pointer(int direction) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>50</y>
+      <w>440</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>Device
+--
++ host_ip : char[16]
+_+ display : Display _
+_+ pong : Pong_
+_+ player : int_
+--
++ Device(int player = 1);
++ bot() : void
++ menu(std::string *s, int max_mode, bool music=false) : int
++ exit() : void
++ enter_ip() : void
++ get_ip() : void
++ single() : bool
++ join() : bool
++ host() : bool
+_+ draw_pong() : void_
+_+ error(std::string s) : void_
+_+ server(int &amp;server_socket, bool &amp;connected, bool &amp;leave) : void_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>90</y>
+      <w>200</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0;10.0;390.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>100</y>
+      <w>230</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0;210.0;380.0</additional_attributes>
+  </element>
+</diagram>
