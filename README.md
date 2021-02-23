@@ -1,6 +1,5 @@
 # GAMEBOARD
- This is a school project in our 4. semester of computer engineering which we use our own developed circuit board from 3. semester.
- The goal of project is to make a gameboy like devide which can play some simple game like pong in single and multi player mode.
+Ein Studienprojekt aus dem 4. Semester CE. Aus einer selbst entwickelten Leiterplatte wurde eine minimalistische Spielekonsole entwickelt, mit der man kleine Spiele wie z.B. Pong oder Snake in Single- sowie Multiplayer-Modus spielen kann.
 
 ## Benötigte Materialien und Programme
     * Hardware
